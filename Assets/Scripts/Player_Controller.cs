@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
 {
-    public int speedOfMovement;
+    public float speedOfMovement;
     public int pushForce;
     public bool game; 
 
@@ -48,15 +48,10 @@ public class Player_Controller : MonoBehaviour
         {
             this.transform.position = transform.position - transform.up * speedOfMovement * Time.deltaTime;
         }
-
-       
-
-       
     }
 
     private void OnTriggerStay2D(Collider2D collision)
-    {
-        
+    {    
         //Push power
         if (Input.GetKey(KeyCode.Space))
         {
@@ -84,9 +79,24 @@ public class Player_Controller : MonoBehaviour
                     collision.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * Time.deltaTime * pushForce * 10);
                 }
             }
-            
-        }
-        
-           
+        }      
+    }
+
+    public void StopPowerAndMovement()
+    {
+        speedOfMovement = .5f;
+        pushForce = 0; 
+    }
+
+    public void RestorePowerAndMovement()
+    {
+        speedOfMovement = 2;
+        pushForce = 25;
+    }
+
+    public void BoostSpeedAndPower()
+    {
+        speedOfMovement = 4;
+        pushForce = 35;
     }
 }
