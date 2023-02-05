@@ -13,6 +13,7 @@ public class Enemies : MonoBehaviour
     public GAMEMANAGER manager;
     public Animator animator;
     [SerializeField] AudioClip levelMusic;
+    [SerializeField] AudioClip levelMusic1;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,8 @@ public class Enemies : MonoBehaviour
         yield return new WaitForSeconds(3);
         if(i + 1 < targetPoints.Length)
         {
-            i++; 
+            i++;
+            AudioManager_1.instance.PlayMusic(levelMusic1);
         }
         else
         {
