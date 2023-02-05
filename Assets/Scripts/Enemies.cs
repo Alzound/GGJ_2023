@@ -28,10 +28,10 @@ public class Enemies : MonoBehaviour
 
     public void EnemyBehaviour()
     {
-        if(Vector2.Distance(transform.position, target.position) > minimumDistance) 
+        if(Vector2.Distance(transform.position, target.position) < minimumDistance) 
         { 
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed* Time.deltaTime);
-            manager.endGame = true; 
+            //manager.endGame = true; 
         }
     }
 
@@ -51,7 +51,7 @@ public class Enemies : MonoBehaviour
     public IEnumerator Wait() 
     {
         yield return new WaitForSeconds(5);
-        if(i ++ < targetPoints.Length)
+        if(i + 1 < targetPoints.Length)
         {
             i++; 
         }
@@ -59,5 +59,6 @@ public class Enemies : MonoBehaviour
         {
             i = 0; 
         }
+        once = false; 
     }
 }
