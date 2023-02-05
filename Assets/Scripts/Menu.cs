@@ -7,12 +7,15 @@ public class Menu : MonoBehaviour
 {
     public GameObject menu; 
     public GameObject credits;
-    public GameObject buttons, returnButton; 
+    public GameObject buttons, returnButton, intro; 
     //public Player_Controller player; 
 
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        intro.SetActive(true);
+        buttons.SetActive(false);
+        StartCoroutine(WaitIntro());
+        //SceneManager.LoadScene(1);
     }
 
     public void Credits()
@@ -31,5 +34,12 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public IEnumerator WaitIntro()
+    {
+
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene(1);  
     }
 }
