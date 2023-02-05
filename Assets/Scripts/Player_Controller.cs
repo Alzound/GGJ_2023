@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(BoxCollider2D))]
@@ -97,8 +98,18 @@ public class Player_Controller : MonoBehaviour
                     Debug.Log("left");
                     collision.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * Time.deltaTime * pushForce * 10);
                 }
+                
             }
         }      
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Kill"))
+        {
+            SceneManager.LoadScene(1);
+            Debug.Log("kill");
+        }
     }
 
     public void StopPowerAndMovement()

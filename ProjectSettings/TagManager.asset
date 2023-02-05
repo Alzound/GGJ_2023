@@ -12,6 +12,7 @@ TagManager:
   - BoxRed
   - BoxBlue
   - BoxGreen
+  - Kill
   layers:
   - Default
   - TransparentFX

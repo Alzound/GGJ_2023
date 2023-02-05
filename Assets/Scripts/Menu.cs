@@ -12,10 +12,10 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        intro.SetActive(true);
+        //intro.SetActive(true);
         buttons.SetActive(false);
         StartCoroutine(WaitIntro());
-        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 
     public void Credits()

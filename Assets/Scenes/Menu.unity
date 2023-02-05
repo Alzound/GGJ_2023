@@ -2465,8 +2465,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100394535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8060303, y: -32.335022, z: 1.2737551}
-  m_LocalScale: {x: 1.7, y: 1, z: 1}
+  m_LocalPosition: {x: 0.86325, y: -23.992, z: 1.2737551}
+  m_LocalScale: {x: 0.998682, y: 0.72497, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 987310111}
@@ -2489,6 +2489,7 @@ MonoBehaviour:
   credits: {fileID: 1099365620}
   buttons: {fileID: 2129145824}
   returnButton: {fileID: 2088799153}
+  intro: {fileID: 0}
 --- !u!1 &2123887863
 GameObject:
   m_ObjectHideFlags: 0
