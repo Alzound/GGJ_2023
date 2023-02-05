@@ -11,12 +11,15 @@ public class Player_Controller : MonoBehaviour
 {
     public float speedOfMovement;
     public int pushForce;
-    public bool game; 
+    public bool game;
+
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         this.gameObject.GetComponent<BoxCollider2D>().size =new Vector2(2, 2);
+        this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,19 +37,35 @@ public class Player_Controller : MonoBehaviour
         //Movement
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.position = transform.position - transform.right * speedOfMovement * Time.deltaTime; 
+            this.transform.position = transform.position - transform.right * speedOfMovement * Time.deltaTime;
+            animator.SetBool("Left", true);
+            animator.SetBool("Right", false);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             this.transform.position = transform.position + transform.right * speedOfMovement * Time.deltaTime;
+            animator.SetBool("Left", false);
+            animator.SetBool("Right", true);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             this.transform.position = transform.position + transform.up * speedOfMovement * Time.deltaTime;
+            animator.SetBool("Left", false);
+            animator.SetBool("Right", false);
+            animator.SetBool("Up", true);
+            animator.SetBool("Down", false);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             this.transform.position = transform.position - transform.up * speedOfMovement * Time.deltaTime;
+            animator.SetBool("Left", false);
+            animator.SetBool("Right", false);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", true);
         }
     }
 
