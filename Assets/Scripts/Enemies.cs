@@ -12,6 +12,8 @@ public class Enemies : MonoBehaviour
     public bool once;
     public GAMEMANAGER manager;
     public Animator animator;
+    [SerializeField] AudioClip levelMusic;
+    [SerializeField] AudioClip levelMusicGeneral;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class Enemies : MonoBehaviour
         { 
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed* Time.deltaTime);
             //manager.endGame = true; 
+            AudioManager_1.instance.PlayMusic(levelMusic);
         }
     }
 
@@ -41,6 +44,7 @@ public class Enemies : MonoBehaviour
         if (transform.position != targetPoints[i].position)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPoints[i].position, speed * Time.deltaTime);
+
         }
         if (once == false)
         {
