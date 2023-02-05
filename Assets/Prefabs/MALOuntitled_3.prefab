@@ -127,6 +127,8 @@ MonoBehaviour:
   once: 1
   manager: {fileID: 0}
   animator: {fileID: 5548003159872973166}
+  levelMusic: {fileID: 8300000, guid: d3e261142db11694abbafb7be0fe5723, type: 3}
+  levelMusicGeneral: {fileID: 0}
 --- !u!61 &5890862924704285865
 BoxCollider2D:
   m_ObjectHideFlags: 0
