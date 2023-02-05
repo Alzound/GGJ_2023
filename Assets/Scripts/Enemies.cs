@@ -13,7 +13,6 @@ public class Enemies : MonoBehaviour
     public GAMEMANAGER manager;
     public Animator animator;
     [SerializeField] AudioClip levelMusic;
-    [SerializeField] AudioClip levelMusicGeneral;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +32,9 @@ public class Enemies : MonoBehaviour
     {
         if(Vector2.Distance(transform.position, target.position) < minimumDistance) 
         { 
+            AudioManager_1.instance.PlayMusic(levelMusic);
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed* Time.deltaTime);
             //manager.endGame = true; 
-            AudioManager_1.instance.PlayMusic(levelMusic);
         }
     }
 
@@ -49,7 +48,7 @@ public class Enemies : MonoBehaviour
         {
             if (once == false)
             {
-                Debug.Log("once"); 
+                //Debug.Log("once"); 
                 once = true;
                 StartCoroutine(Wait());
             }
@@ -61,8 +60,8 @@ public class Enemies : MonoBehaviour
     {
         animator.SetBool("Left", false);
         animator.SetBool("Right", false);
-        animator.SetBool("Up", false);
-        animator.SetBool("Down", false);
+        //animator.SetBool("Up", false);
+        //animator.SetBool("Down", false);
         yield return new WaitForSeconds(3);
         if(i + 1 < targetPoints.Length)
         {

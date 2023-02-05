@@ -41,6 +41,7 @@ public class Telekinesis : MonoBehaviour
                 power.gameObject.SetActive(true);
                 this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                 isTelekinetic = true;
+                Debug.Log("pollo");
             }
             if (Vector2.Distance(playerInfo, me) > rangeOfPower)
             {
