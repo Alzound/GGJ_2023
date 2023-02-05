@@ -18,7 +18,7 @@ public class Player_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<BoxCollider2D>().size =new Vector2(2, 2);
+        this.gameObject.GetComponent<BoxCollider2D>().size =new Vector2(1, 1.3f);
         this.gameObject.GetComponent<Animator>();
     }
 

@@ -10,7 +10,8 @@ public class Enemies : MonoBehaviour
     public Transform target; 
     public float minimumDistance;
     public bool once;
-    public GAMEMANAGER manager; 
+    public GAMEMANAGER manager;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,10 @@ public class Enemies : MonoBehaviour
 
     public IEnumerator Wait() 
     {
+        animator.SetBool("Left", false);
+        animator.SetBool("Right", false);
+        animator.SetBool("Up", false);
+        animator.SetBool("Down", false);
         yield return new WaitForSeconds(5);
         if(i ++ < targetPoints.Length)
         {

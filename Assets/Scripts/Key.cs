@@ -8,6 +8,10 @@ public class Key : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        door.SetActive(false);
+        if (collision.CompareTag("Player"))
+        {
+            this.gameObject.SetActive(false);
+            door.SetActive(false);
+        }
     }
 }
