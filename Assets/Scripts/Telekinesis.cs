@@ -6,7 +6,7 @@ using UnityEngine;
 
 //Components
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(PrefabAssetType))]
+//[RequireComponent(typeof(PrefabAssetType))]
 
 public class Telekinesis : MonoBehaviour
 {
