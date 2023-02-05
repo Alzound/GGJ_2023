@@ -8,6 +8,10 @@ TagManager:
   - nullify
   - boostSpeed
   - boostRange
+  - BoxYwllow
+  - BoxRed
+  - BoxBlue
+  - BoxGreen
   layers:
   - Default
   - TransparentFX
