@@ -9,7 +9,7 @@ public class Enemies : MonoBehaviour
     public Transform[] targetPoints;
     public Transform target; 
     public float minimumDistance;
-    public bool once;
+    public bool once = false;
     public GAMEMANAGER manager;
     public Animator animator;
     [SerializeField] AudioClip levelMusic;
@@ -18,7 +18,7 @@ public class Enemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        i = 0;
+        once = false; 
     }
 
     // Update is called once per frame
@@ -45,12 +45,16 @@ public class Enemies : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPoints[i].position, speed * Time.deltaTime);
 
-        }
-        if (once == false)
+        }else 
         {
-            once = true;
-            StartCoroutine(Wait());
+            if (once == false)
+            {
+                Debug.Log("once"); 
+                once = true;
+                StartCoroutine(Wait());
+            }
         }
+        
     }
 
     public IEnumerator Wait() 
@@ -59,7 +63,7 @@ public class Enemies : MonoBehaviour
         animator.SetBool("Right", false);
         animator.SetBool("Up", false);
         animator.SetBool("Down", false);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         if(i + 1 < targetPoints.Length)
         {
             i++; 
