@@ -11,7 +11,7 @@ public class GAMEMANAGER : MonoBehaviour
     private int t;
 
     public GameObject particles;
-
+    public bool endGame; 
 
     public int time, repeat, quit;
     public float y = .5f;
