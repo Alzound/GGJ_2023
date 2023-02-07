@@ -6,12 +6,6 @@ public class Stones : MonoBehaviour
 {
     private bool nullify, bSpeed, bRange;  
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,10 +23,11 @@ public class Stones : MonoBehaviour
             other.gameObject.GetComponent<Player_Controller>().BoostSpeedAndPower();
         }
 
-        if (this.gameObject.CompareTag("boostRange") && other.gameObject.CompareTag("Player"))
+        if (this.gameObject.CompareTag("boostRange") && other.gameObject.CompareTag(""))
         {
             bRange = true;
             other.gameObject.GetComponent<Telekinesis>().BoostRange();
+            Debug.Log("bRange"); 
         }
     }
 

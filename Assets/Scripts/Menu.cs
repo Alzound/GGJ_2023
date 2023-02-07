@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
         //intro.SetActive(true);
         buttons.SetActive(false);
         StartCoroutine(WaitIntro());
-        SceneManager.LoadScene(1);
+        
     }
 
     public void Credits()
@@ -38,8 +38,9 @@ public class Menu : MonoBehaviour
 
     public IEnumerator WaitIntro()
     {
-
+        intro.SetActive(true);
         yield return new WaitForSeconds(10);
+         
         SceneManager.LoadScene(1);  
     }
 }

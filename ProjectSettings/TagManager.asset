@@ -13,6 +13,7 @@ TagManager:
   - BoxBlue
   - BoxGreen
   - Kill
+  - Stone
   layers:
   - Default
   - TransparentFX
@@ -53,11 +54,11 @@ TagManager:
   - name: background
     uniqueID: 1330361467
     locked: 0
-  - name: Promps
-    uniqueID: 3547006241
-    locked: 0
   - name: Enemies
     uniqueID: 1389897933
+    locked: 0
+  - name: Promps
+    uniqueID: 3547006241
     locked: 0
   - name: Player
     uniqueID: 3996563529
