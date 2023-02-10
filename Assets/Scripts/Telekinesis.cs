@@ -35,13 +35,12 @@ public class Telekinesis : MonoBehaviour
     {
         if(nullify == false)
         {
-            Debug.Log("Mouse over");
+            //Debug.Log("Mouse over");
             if (Vector2.Distance(playerInfo, me) <= rangeOfPower)
             {
                 power.gameObject.SetActive(true);
                 this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                 isTelekinetic = true;
-                Debug.Log("pollo");
             }
             if (Vector2.Distance(playerInfo, me) > rangeOfPower)
             {
@@ -64,7 +63,7 @@ public class Telekinesis : MonoBehaviour
 
     private void OnMouseExit()
     {
-        Debug.Log("Mouse exit");
+        //Debug.Log("Mouse exit");
         power.gameObject.SetActive(false);
         this.gameObject.GetComponent<SpriteRenderer>().color = initialColor;
         isTelekinetic = false;
